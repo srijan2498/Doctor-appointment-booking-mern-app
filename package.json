@@ -9,7 +9,7 @@
     "server": "node serevr.js",
     "client": "npm start --prefix ./client ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd ./client && react-scripts build --no-warnings"
+    "do": "cd ./client && npm run build"
   },
   "keywords": [],
   "author": "techinfyt ",
