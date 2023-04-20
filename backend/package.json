@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "server": "node serevr.js",
-    "client": "npm start --prefix ./client ",
+    "server": "node server.js",
+    "client": "npm start --prefix ../client ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "do": "cd ./client && npm run build"
+    "build": "npm i"
   },
   "keywords": [],
   "author": "techinfyt ",
