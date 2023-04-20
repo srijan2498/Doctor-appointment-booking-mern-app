@@ -33,8 +33,4 @@ app.get('*', function (req, res) {
 
 //listen port
 app.listen(port, () => {
-  console.log(
-    `Server Running in ${process.env.NODE_MODE} Mode on port ${process.env.PORT}`
-      .bgCyan.white
-  );
 });
