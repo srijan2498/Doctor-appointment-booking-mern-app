@@ -2,9 +2,10 @@ import React from 'react'
 import './footer.css'
 
 const Footer = () => {
+  const year = new Date().getFullYear()
   return (
     <div className='footer'>
-      Cupping Studio © 2023
+      Cupping Studio © {year} | Srijan Tripathi
     </div>
   )
 }

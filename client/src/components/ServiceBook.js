@@ -8,12 +8,20 @@ const { ObjectId } = require('bson');
 const ServiceBook = () => {
     const { user } = useSelector((state) => state.user);
     const [userId, setUserId]=useState(user?user._id:"")
+    function generateObjectId() {
+        const timestamp = Math.floor(new Date().getTime() / 1000).toString(16); // 8 chars for the timestamp
+        const randomHex = Array.from({ length: 16 }, () => Math.floor(Math.random() * 16).toString(16)).join(''); // 16 chars of random hex
+        return timestamp + randomHex;
+    }
     const handleBooking = async (values) => {
-        values.userId = user ? user._id : new ObjectId().toHexString()
+        values.userId = user ? user._id : generateObjectId()
         try {
             if (values.name.length != 0 && values.phone.length != 0 && values.service.length != 0 && values.email.length != 0) {
+                console.log(values)
                 if (values.phone.length === 10) {
                     const res = await axios.post("/api/v1/user/book-appointment", values);
+                    console.log("hi")
+                    console.log(res)
                     window.location.reload();
                     if (res.data.success) {
                         message.success("Your appointment has been booked.")
