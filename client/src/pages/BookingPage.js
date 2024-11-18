@@ -9,7 +9,7 @@ const BookingPage = () => {
   const [bookings, setBookings] = useState([]);
   const getBookingsData = async () => {
     try {
-      const res = await axios.get("/api/v1/admin/bookings", {
+      const res = await axios.get("https://doctor-appointment-booking-mern-app.vercel.app/api/v1/admin/bookings", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -23,7 +23,7 @@ const BookingPage = () => {
 
   const changeStatus = async (obj) => {
     try {
-      const res = await axios.post("/api/v1/admin/change-appointment-status", obj);
+      const res = await axios.post("https://doctor-appointment-booking-mern-app.vercel.app/api/v1/admin/change-appointment-status", obj);
       if (res.data.success) {
         getBookingsData()
       }
