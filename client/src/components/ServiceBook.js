@@ -19,7 +19,7 @@ const ServiceBook = () => {
             if (values.name.length != 0 && values.phone.length != 0 && values.service.length != 0 && values.email.length != 0) {
                 console.log(values)
                 if (values.phone.length === 10) {
-                    const res = await axios.post("/api/v1/user/book-appointment", values);
+                    const res = await axios.post("https://doctor-appointment-booking-mern-app.vercel.app/api/v1/user/book-appointment", values);
                     console.log("hi")
                     console.log(res)
                     window.location.reload();
