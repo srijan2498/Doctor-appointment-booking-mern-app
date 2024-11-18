@@ -12,6 +12,7 @@ const Login = () => {
   //form handler
   const onfinishHandler = async (values) => {
     try {
+      console.log("values bfore send = ", values)
       dispatch(showLoading());
       const res = await axios.post("https://doctor-appointment-booking-mern-app.vercel.app/api/v1/user/login", values);
       console.log("res = ", res)
