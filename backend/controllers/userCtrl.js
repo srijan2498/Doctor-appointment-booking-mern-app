@@ -30,7 +30,9 @@ const registerController = async (req, res) => {
 // login user
 const loginController = async (req, res) => {
   try {
+    console.log("in login cntroller req = ", req)
     const user = await userModel.findOne({ email: req.body.email });
+    console.log("user = ", user)
     if (!user) {
       return res
         .status(200)
