@@ -15,13 +15,15 @@ connectDB();
 //rest obejct
 const app = express();
 
-app.use(cors(
-  {
-    origin: ["https://srijan-appoint.vercel.app/"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
-  }
-));
+// Allow requests from your frontend domain
+const corsOptions = {
+  origin: 'https://srijan-appoint.vercel.app', // Specify the allowed origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Include credentials like cookies
+};
+
+app.use(cors(corsOptions));
+
 
 //middlewares
 app.use(express.json());
