@@ -1,0 +1,16 @@
+.contact-container {
+    background-color: #d6d6d6;
+    padding: 20px;
+    color: #fff;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container div {
+    max-width: 800px;
+}
+
+#submit-btn{
+    margin: auto;
+}
