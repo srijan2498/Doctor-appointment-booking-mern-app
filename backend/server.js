@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: ["https://appointment.vercel.app"],
+    origin: ["https://srijan-appoint.vercel.app/"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
   }
