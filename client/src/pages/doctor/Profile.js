@@ -15,7 +15,7 @@ const Profile = () => {
   const getAdminInfo = async () => {
     try {
       const res = await axios.get(
-        `/api/v1/admin/profile/${params.id}`
+        `https://doctor-appointment-booking-mern-app.vercel.app/api/v1/admin/profile/${params.id}`
       );
       if (res.data.success) {
         setCurrentUser(res.data.data);
