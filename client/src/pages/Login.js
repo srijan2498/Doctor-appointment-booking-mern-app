@@ -14,6 +14,7 @@ const Login = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post("https://doctor-appointment-booking-mern-app.vercel.app/api/v1/user/login", values);
+      console.log("res = ", res)
       window.location.reload();
       dispatch(hideLoading());
       if (res.data.success) {
